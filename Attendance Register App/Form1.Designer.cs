@@ -36,7 +36,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
-            this.period1Present = new System.Windows.Forms.RadioButton();
             this.period1Absent = new System.Windows.Forms.RadioButton();
             this.period1 = new System.Windows.Forms.Label();
             this.period2 = new System.Windows.Forms.Label();
@@ -61,7 +60,7 @@
             this.percentage4 = new System.Windows.Forms.Label();
             this.percentage3 = new System.Windows.Forms.Label();
             this.percentage2 = new System.Windows.Forms.Label();
-            this.subject5attendance = new System.Windows.Forms.Label();
+            this.subject5Attendance = new System.Windows.Forms.Label();
             this.subject6Attendance = new System.Windows.Forms.Label();
             this.subject4Attendance = new System.Windows.Forms.Label();
             this.subject3Attendance = new System.Windows.Forms.Label();
@@ -77,16 +76,17 @@
             this.subject3 = new System.Windows.Forms.Label();
             this.subject2 = new System.Windows.Forms.Label();
             this.subject1 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.idDisplay = new System.Windows.Forms.Label();
+            this.nameDisplay = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.submitButton = new System.Windows.Forms.Button();
             this.showDetailsButton = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.period1Present = new System.Windows.Forms.RadioButton();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -169,17 +169,6 @@
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(0, 26);
             this.dateLabel.TabIndex = 9;
-            // 
-            // period1Present
-            // 
-            this.period1Present.AutoSize = true;
-            this.period1Present.Location = new System.Drawing.Point(119, 51);
-            this.period1Present.Name = "period1Present";
-            this.period1Present.Size = new System.Drawing.Size(74, 20);
-            this.period1Present.TabIndex = 10;
-            this.period1Present.TabStop = true;
-            this.period1Present.Text = "Present";
-            this.period1Present.UseVisualStyleBackColor = true;
             // 
             // period1Absent
             // 
@@ -381,7 +370,7 @@
             this.panel1.Controls.Add(this.percentage4);
             this.panel1.Controls.Add(this.percentage3);
             this.panel1.Controls.Add(this.percentage2);
-            this.panel1.Controls.Add(this.subject5attendance);
+            this.panel1.Controls.Add(this.subject5Attendance);
             this.panel1.Controls.Add(this.subject6Attendance);
             this.panel1.Controls.Add(this.subject4Attendance);
             this.panel1.Controls.Add(this.subject3Attendance);
@@ -397,13 +386,13 @@
             this.panel1.Controls.Add(this.subject3);
             this.panel1.Controls.Add(this.subject2);
             this.panel1.Controls.Add(this.subject1);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.idDisplay);
+            this.panel1.Controls.Add(this.nameDisplay);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(522, 145);
+            this.panel1.Location = new System.Drawing.Point(517, 135);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(482, 535);
             this.panel1.TabIndex = 29;
@@ -460,15 +449,15 @@
             this.percentage2.TabIndex = 44;
             this.percentage2.Text = "Percentage 2";
             // 
-            // subject5attendance
+            // subject5Attendance
             // 
-            this.subject5attendance.AutoSize = true;
-            this.subject5attendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subject5attendance.Location = new System.Drawing.Point(206, 448);
-            this.subject5attendance.Name = "subject5attendance";
-            this.subject5attendance.Size = new System.Drawing.Size(111, 20);
-            this.subject5attendance.TabIndex = 43;
-            this.subject5attendance.Text = "Ateendance 5";
+            this.subject5Attendance.AutoSize = true;
+            this.subject5Attendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subject5Attendance.Location = new System.Drawing.Point(206, 448);
+            this.subject5Attendance.Name = "subject5Attendance";
+            this.subject5Attendance.Size = new System.Drawing.Size(111, 20);
+            this.subject5Attendance.TabIndex = 43;
+            this.subject5Attendance.Text = "Ateendance 5";
             // 
             // subject6Attendance
             // 
@@ -623,25 +612,26 @@
             this.subject1.TabIndex = 30;
             this.subject1.Text = "Subject 1";
             // 
-            // label11
+            // idDisplay
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(206, 129);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(129, 26);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "Enter Name";
+            this.idDisplay.AutoSize = true;
+            this.idDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idDisplay.Location = new System.Drawing.Point(206, 129);
+            this.idDisplay.Name = "idDisplay";
+            this.idDisplay.Size = new System.Drawing.Size(129, 26);
+            this.idDisplay.TabIndex = 9;
+            this.idDisplay.Text = "Enter Name";
             // 
-            // label10
+            // nameDisplay
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(107, 87);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(129, 26);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Enter Name";
+            this.nameDisplay.AutoSize = true;
+            this.nameDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameDisplay.Location = new System.Drawing.Point(107, 87);
+            this.nameDisplay.Name = "nameDisplay";
+            this.nameDisplay.Size = new System.Drawing.Size(129, 26);
+            this.nameDisplay.TabIndex = 8;
+            this.nameDisplay.Text = "Enter Name";
+            this.nameDisplay.Click += new System.EventHandler(this.label10_Click);
             // 
             // label9
             // 
@@ -692,6 +682,7 @@
             this.submitButton.TabIndex = 30;
             this.submitButton.Text = "SUBMIT";
             this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // showDetailsButton
             // 
@@ -701,18 +692,11 @@
             this.showDetailsButton.TabIndex = 31;
             this.showDetailsButton.Text = "DETAILS";
             this.showDetailsButton.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(281, 287);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(218, 32);
-            this.dateTimePicker1.TabIndex = 32;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.showDetailsButton.Click += new System.EventHandler(this.showDetailsButton_Click);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.period1Present);
             this.panel2.Controls.Add(this.dayLabel);
             this.panel2.Controls.Add(this.period6);
             this.panel2.Controls.Add(this.period6Absent);
@@ -731,11 +715,32 @@
             this.panel2.Controls.Add(this.period2Present);
             this.panel2.Controls.Add(this.period1);
             this.panel2.Controls.Add(this.period1Absent);
-            this.panel2.Controls.Add(this.period1Present);
             this.panel2.Location = new System.Drawing.Point(50, 352);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(354, 318);
             this.panel2.TabIndex = 33;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // period1Present
+            // 
+            this.period1Present.AutoSize = true;
+            this.period1Present.Location = new System.Drawing.Point(116, 50);
+            this.period1Present.Name = "period1Present";
+            this.period1Present.Size = new System.Drawing.Size(74, 20);
+            this.period1Present.TabIndex = 30;
+            this.period1Present.TabStop = true;
+            this.period1Present.Text = "Present";
+            this.period1Present.UseVisualStyleBackColor = true;
+            this.period1Present.CheckedChanged += new System.EventHandler(this.period1Present_CheckedChanged);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(293, 292);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(218, 32);
+            this.dateTimePicker1.TabIndex = 32;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // AttendanceRegister
             // 
@@ -778,7 +783,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label dateLabel;
-        private System.Windows.Forms.RadioButton period1Present;
         private System.Windows.Forms.RadioButton period1Absent;
         private System.Windows.Forms.Label period1;
         private System.Windows.Forms.Label period2;
@@ -798,8 +802,8 @@
         private System.Windows.Forms.RadioButton period6Present;
         private System.Windows.Forms.Label dayLabel;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label idDisplay;
+        private System.Windows.Forms.Label nameDisplay;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -823,12 +827,13 @@
         private System.Windows.Forms.Label percentage4;
         private System.Windows.Forms.Label percentage3;
         private System.Windows.Forms.Label percentage2;
-        private System.Windows.Forms.Label subject5attendance;
+        private System.Windows.Forms.Label subject5Attendance;
         private System.Windows.Forms.Label subject6Attendance;
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.Button showDetailsButton;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton period1Present;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
 

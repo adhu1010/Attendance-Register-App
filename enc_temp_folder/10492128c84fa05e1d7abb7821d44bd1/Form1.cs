@@ -352,17 +352,6 @@ namespace Attendance_Register_App
                 period1.BackColor = Color.LightCoral;
                 periodAttendance[timeTable[0]] = false;
             }
-            if(period2Present.Checked)
-            {
-                BackColor = Color.LightGreen;
-                periodAttendance[timeTable[0]] = true;
-            }
-            else
-            {
-                period1.BackColor = Color.LightCoral;
-                periodAttendance[timeTable[0]] = false;
-            }
-
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
