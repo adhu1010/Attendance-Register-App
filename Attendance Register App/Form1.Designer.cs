@@ -35,7 +35,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.dateLabel = new System.Windows.Forms.Label();
             this.period1Present = new System.Windows.Forms.RadioButton();
             this.period1Absent = new System.Windows.Forms.RadioButton();
@@ -86,7 +85,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.submitButton = new System.Windows.Forms.Button();
             this.showDetailsButton = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -118,6 +120,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(164, 26);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
@@ -146,24 +149,17 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(164, 26);
             this.textBox2.TabIndex = 5;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(45, 287);
+            this.label5.Location = new System.Drawing.Point(45, 292);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(230, 26);
             this.label5.TabIndex = 6;
             this.label5.Text = "ATTENDANCE DATE:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(285, 287);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(164, 26);
-            this.textBox3.TabIndex = 7;
             // 
             // dateLabel
             // 
@@ -177,7 +173,7 @@
             // period1Present
             // 
             this.period1Present.AutoSize = true;
-            this.period1Present.Location = new System.Drawing.Point(166, 403);
+            this.period1Present.Location = new System.Drawing.Point(119, 51);
             this.period1Present.Name = "period1Present";
             this.period1Present.Size = new System.Drawing.Size(74, 20);
             this.period1Present.TabIndex = 10;
@@ -188,7 +184,7 @@
             // period1Absent
             // 
             this.period1Absent.AutoSize = true;
-            this.period1Absent.Location = new System.Drawing.Point(306, 403);
+            this.period1Absent.Location = new System.Drawing.Point(259, 51);
             this.period1Absent.Name = "period1Absent";
             this.period1Absent.Size = new System.Drawing.Size(70, 20);
             this.period1Absent.TabIndex = 11;
@@ -200,17 +196,18 @@
             // 
             this.period1.AutoSize = true;
             this.period1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.period1.Location = new System.Drawing.Point(50, 402);
+            this.period1.Location = new System.Drawing.Point(3, 50);
             this.period1.Name = "period1";
             this.period1.Size = new System.Drawing.Size(71, 20);
             this.period1.TabIndex = 12;
             this.period1.Text = "Period 1";
+            this.period1.Click += new System.EventHandler(this.period1_Click);
             // 
             // period2
             // 
             this.period2.AutoSize = true;
             this.period2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.period2.Location = new System.Drawing.Point(50, 450);
+            this.period2.Location = new System.Drawing.Point(3, 98);
             this.period2.Name = "period2";
             this.period2.Size = new System.Drawing.Size(71, 20);
             this.period2.TabIndex = 15;
@@ -219,7 +216,7 @@
             // period2Absent
             // 
             this.period2Absent.AutoSize = true;
-            this.period2Absent.Location = new System.Drawing.Point(306, 451);
+            this.period2Absent.Location = new System.Drawing.Point(259, 99);
             this.period2Absent.Name = "period2Absent";
             this.period2Absent.Size = new System.Drawing.Size(70, 20);
             this.period2Absent.TabIndex = 14;
@@ -230,7 +227,7 @@
             // period2Present
             // 
             this.period2Present.AutoSize = true;
-            this.period2Present.Location = new System.Drawing.Point(166, 451);
+            this.period2Present.Location = new System.Drawing.Point(119, 99);
             this.period2Present.Name = "period2Present";
             this.period2Present.Size = new System.Drawing.Size(74, 20);
             this.period2Present.TabIndex = 13;
@@ -242,7 +239,7 @@
             // 
             this.period3.AutoSize = true;
             this.period3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.period3.Location = new System.Drawing.Point(50, 493);
+            this.period3.Location = new System.Drawing.Point(3, 141);
             this.period3.Name = "period3";
             this.period3.Size = new System.Drawing.Size(71, 20);
             this.period3.TabIndex = 18;
@@ -251,7 +248,7 @@
             // period3Absent
             // 
             this.period3Absent.AutoSize = true;
-            this.period3Absent.Location = new System.Drawing.Point(306, 494);
+            this.period3Absent.Location = new System.Drawing.Point(259, 142);
             this.period3Absent.Name = "period3Absent";
             this.period3Absent.Size = new System.Drawing.Size(70, 20);
             this.period3Absent.TabIndex = 17;
@@ -262,7 +259,7 @@
             // period3Present
             // 
             this.period3Present.AutoSize = true;
-            this.period3Present.Location = new System.Drawing.Point(166, 494);
+            this.period3Present.Location = new System.Drawing.Point(119, 142);
             this.period3Present.Name = "period3Present";
             this.period3Present.Size = new System.Drawing.Size(74, 20);
             this.period3Present.TabIndex = 16;
@@ -274,7 +271,7 @@
             // 
             this.period4.AutoSize = true;
             this.period4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.period4.Location = new System.Drawing.Point(50, 537);
+            this.period4.Location = new System.Drawing.Point(3, 185);
             this.period4.Name = "period4";
             this.period4.Size = new System.Drawing.Size(71, 20);
             this.period4.TabIndex = 21;
@@ -283,7 +280,7 @@
             // period4Absent
             // 
             this.period4Absent.AutoSize = true;
-            this.period4Absent.Location = new System.Drawing.Point(306, 538);
+            this.period4Absent.Location = new System.Drawing.Point(259, 186);
             this.period4Absent.Name = "period4Absent";
             this.period4Absent.Size = new System.Drawing.Size(70, 20);
             this.period4Absent.TabIndex = 20;
@@ -294,7 +291,7 @@
             // period4Present
             // 
             this.period4Present.AutoSize = true;
-            this.period4Present.Location = new System.Drawing.Point(166, 538);
+            this.period4Present.Location = new System.Drawing.Point(119, 186);
             this.period4Present.Name = "period4Present";
             this.period4Present.Size = new System.Drawing.Size(74, 20);
             this.period4Present.TabIndex = 19;
@@ -306,7 +303,7 @@
             // 
             this.period5.AutoSize = true;
             this.period5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.period5.Location = new System.Drawing.Point(50, 582);
+            this.period5.Location = new System.Drawing.Point(3, 230);
             this.period5.Name = "period5";
             this.period5.Size = new System.Drawing.Size(71, 20);
             this.period5.TabIndex = 24;
@@ -315,7 +312,7 @@
             // period5Absent
             // 
             this.period5Absent.AutoSize = true;
-            this.period5Absent.Location = new System.Drawing.Point(306, 583);
+            this.period5Absent.Location = new System.Drawing.Point(259, 231);
             this.period5Absent.Name = "period5Absent";
             this.period5Absent.Size = new System.Drawing.Size(70, 20);
             this.period5Absent.TabIndex = 23;
@@ -326,7 +323,7 @@
             // period5Present
             // 
             this.period5Present.AutoSize = true;
-            this.period5Present.Location = new System.Drawing.Point(166, 583);
+            this.period5Present.Location = new System.Drawing.Point(119, 231);
             this.period5Present.Name = "period5Present";
             this.period5Present.Size = new System.Drawing.Size(74, 20);
             this.period5Present.TabIndex = 22;
@@ -338,7 +335,7 @@
             // 
             this.period6.AutoSize = true;
             this.period6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.period6.Location = new System.Drawing.Point(50, 627);
+            this.period6.Location = new System.Drawing.Point(3, 275);
             this.period6.Name = "period6";
             this.period6.Size = new System.Drawing.Size(71, 20);
             this.period6.TabIndex = 27;
@@ -347,7 +344,7 @@
             // period6Absent
             // 
             this.period6Absent.AutoSize = true;
-            this.period6Absent.Location = new System.Drawing.Point(306, 628);
+            this.period6Absent.Location = new System.Drawing.Point(259, 276);
             this.period6Absent.Name = "period6Absent";
             this.period6Absent.Size = new System.Drawing.Size(70, 20);
             this.period6Absent.TabIndex = 26;
@@ -358,7 +355,7 @@
             // period6Present
             // 
             this.period6Present.AutoSize = true;
-            this.period6Present.Location = new System.Drawing.Point(166, 628);
+            this.period6Present.Location = new System.Drawing.Point(119, 276);
             this.period6Present.Name = "period6Present";
             this.period6Present.Size = new System.Drawing.Size(74, 20);
             this.period6Present.TabIndex = 25;
@@ -370,11 +367,12 @@
             // 
             this.dayLabel.AutoSize = true;
             this.dayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dayLabel.Location = new System.Drawing.Point(49, 356);
+            this.dayLabel.Location = new System.Drawing.Point(2, 4);
             this.dayLabel.Name = "dayLabel";
             this.dayLabel.Size = new System.Drawing.Size(183, 26);
             this.dayLabel.TabIndex = 28;
             this.dayLabel.Text = "CURRENT DATE";
+            this.dayLabel.Click += new System.EventHandler(this.dayLabel_Click);
             // 
             // panel1
             // 
@@ -405,7 +403,7 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(543, 145);
+            this.panel1.Location = new System.Drawing.Point(522, 145);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(482, 535);
             this.panel1.TabIndex = 29;
@@ -704,36 +702,53 @@
             this.showDetailsButton.Text = "DETAILS";
             this.showDetailsButton.UseVisualStyleBackColor = true;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(281, 287);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(218, 32);
+            this.dateTimePicker1.TabIndex = 32;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dayLabel);
+            this.panel2.Controls.Add(this.period6);
+            this.panel2.Controls.Add(this.period6Absent);
+            this.panel2.Controls.Add(this.period6Present);
+            this.panel2.Controls.Add(this.period5);
+            this.panel2.Controls.Add(this.period5Absent);
+            this.panel2.Controls.Add(this.period5Present);
+            this.panel2.Controls.Add(this.period4);
+            this.panel2.Controls.Add(this.period4Absent);
+            this.panel2.Controls.Add(this.period4Present);
+            this.panel2.Controls.Add(this.period3);
+            this.panel2.Controls.Add(this.period3Absent);
+            this.panel2.Controls.Add(this.period3Present);
+            this.panel2.Controls.Add(this.period2);
+            this.panel2.Controls.Add(this.period2Absent);
+            this.panel2.Controls.Add(this.period2Present);
+            this.panel2.Controls.Add(this.period1);
+            this.panel2.Controls.Add(this.period1Absent);
+            this.panel2.Controls.Add(this.period1Present);
+            this.panel2.Location = new System.Drawing.Point(50, 352);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(354, 318);
+            this.panel2.TabIndex = 33;
+            // 
             // AttendanceRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1050, 793);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.showDetailsButton);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dayLabel);
-            this.Controls.Add(this.period6);
-            this.Controls.Add(this.period6Absent);
-            this.Controls.Add(this.period6Present);
-            this.Controls.Add(this.period5);
-            this.Controls.Add(this.period5Absent);
-            this.Controls.Add(this.period5Present);
-            this.Controls.Add(this.period4);
-            this.Controls.Add(this.period4Absent);
-            this.Controls.Add(this.period4Present);
-            this.Controls.Add(this.period3);
-            this.Controls.Add(this.period3Absent);
-            this.Controls.Add(this.period3Present);
-            this.Controls.Add(this.period2);
-            this.Controls.Add(this.period2Absent);
-            this.Controls.Add(this.period2Present);
-            this.Controls.Add(this.period1);
-            this.Controls.Add(this.period1Absent);
-            this.Controls.Add(this.period1Present);
             this.Controls.Add(this.dateLabel);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label4);
@@ -746,6 +761,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -760,7 +777,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.RadioButton period1Present;
         private System.Windows.Forms.RadioButton period1Absent;
@@ -811,6 +827,8 @@
         private System.Windows.Forms.Label subject6Attendance;
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.Button showDetailsButton;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
