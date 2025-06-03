@@ -36,23 +36,12 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
-            this.period1Absent = new System.Windows.Forms.RadioButton();
             this.period1 = new System.Windows.Forms.Label();
             this.period2 = new System.Windows.Forms.Label();
-            this.period2Absent = new System.Windows.Forms.RadioButton();
-            this.period2Present = new System.Windows.Forms.RadioButton();
             this.period3 = new System.Windows.Forms.Label();
-            this.period3Absent = new System.Windows.Forms.RadioButton();
-            this.period3Present = new System.Windows.Forms.RadioButton();
             this.period4 = new System.Windows.Forms.Label();
-            this.period4Absent = new System.Windows.Forms.RadioButton();
-            this.period4Present = new System.Windows.Forms.RadioButton();
             this.period5 = new System.Windows.Forms.Label();
-            this.period5Absent = new System.Windows.Forms.RadioButton();
-            this.period5Present = new System.Windows.Forms.RadioButton();
             this.period6 = new System.Windows.Forms.Label();
-            this.period6Absent = new System.Windows.Forms.RadioButton();
-            this.period6Present = new System.Windows.Forms.RadioButton();
             this.dayLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.percentage6 = new System.Windows.Forms.Label();
@@ -85,8 +74,20 @@
             this.submitButton = new System.Windows.Forms.Button();
             this.showDetailsButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.period1Present = new System.Windows.Forms.RadioButton();
+            this.period6Absent = new System.Windows.Forms.CheckBox();
+            this.period6Present = new System.Windows.Forms.CheckBox();
+            this.period5Absent = new System.Windows.Forms.CheckBox();
+            this.period5Present = new System.Windows.Forms.CheckBox();
+            this.period4Absent = new System.Windows.Forms.CheckBox();
+            this.period4Present = new System.Windows.Forms.CheckBox();
+            this.period3Absent = new System.Windows.Forms.CheckBox();
+            this.period3Present = new System.Windows.Forms.CheckBox();
+            this.period2Absent = new System.Windows.Forms.CheckBox();
+            this.period2Present = new System.Windows.Forms.CheckBox();
+            this.period1Absent = new System.Windows.Forms.CheckBox();
+            this.period1Present = new System.Windows.Forms.CheckBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -106,7 +107,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(49, 145);
+            this.label2.Location = new System.Drawing.Point(77, 145);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(334, 29);
             this.label2.TabIndex = 1;
@@ -170,17 +171,6 @@
             this.dateLabel.Size = new System.Drawing.Size(0, 26);
             this.dateLabel.TabIndex = 9;
             // 
-            // period1Absent
-            // 
-            this.period1Absent.AutoSize = true;
-            this.period1Absent.Location = new System.Drawing.Point(259, 51);
-            this.period1Absent.Name = "period1Absent";
-            this.period1Absent.Size = new System.Drawing.Size(70, 20);
-            this.period1Absent.TabIndex = 11;
-            this.period1Absent.TabStop = true;
-            this.period1Absent.Text = "Absent";
-            this.period1Absent.UseVisualStyleBackColor = true;
-            // 
             // period1
             // 
             this.period1.AutoSize = true;
@@ -201,28 +191,7 @@
             this.period2.Size = new System.Drawing.Size(71, 20);
             this.period2.TabIndex = 15;
             this.period2.Text = "Period 2";
-            // 
-            // period2Absent
-            // 
-            this.period2Absent.AutoSize = true;
-            this.period2Absent.Location = new System.Drawing.Point(259, 99);
-            this.period2Absent.Name = "period2Absent";
-            this.period2Absent.Size = new System.Drawing.Size(70, 20);
-            this.period2Absent.TabIndex = 14;
-            this.period2Absent.TabStop = true;
-            this.period2Absent.Text = "Absent";
-            this.period2Absent.UseVisualStyleBackColor = true;
-            // 
-            // period2Present
-            // 
-            this.period2Present.AutoSize = true;
-            this.period2Present.Location = new System.Drawing.Point(119, 99);
-            this.period2Present.Name = "period2Present";
-            this.period2Present.Size = new System.Drawing.Size(74, 20);
-            this.period2Present.TabIndex = 13;
-            this.period2Present.TabStop = true;
-            this.period2Present.Text = "Present";
-            this.period2Present.UseVisualStyleBackColor = true;
+            this.period2.Click += new System.EventHandler(this.period2_Click);
             // 
             // period3
             // 
@@ -234,28 +203,6 @@
             this.period3.TabIndex = 18;
             this.period3.Text = "Period 3";
             // 
-            // period3Absent
-            // 
-            this.period3Absent.AutoSize = true;
-            this.period3Absent.Location = new System.Drawing.Point(259, 142);
-            this.period3Absent.Name = "period3Absent";
-            this.period3Absent.Size = new System.Drawing.Size(70, 20);
-            this.period3Absent.TabIndex = 17;
-            this.period3Absent.TabStop = true;
-            this.period3Absent.Text = "Absent";
-            this.period3Absent.UseVisualStyleBackColor = true;
-            // 
-            // period3Present
-            // 
-            this.period3Present.AutoSize = true;
-            this.period3Present.Location = new System.Drawing.Point(119, 142);
-            this.period3Present.Name = "period3Present";
-            this.period3Present.Size = new System.Drawing.Size(74, 20);
-            this.period3Present.TabIndex = 16;
-            this.period3Present.TabStop = true;
-            this.period3Present.Text = "Present";
-            this.period3Present.UseVisualStyleBackColor = true;
-            // 
             // period4
             // 
             this.period4.AutoSize = true;
@@ -265,28 +212,6 @@
             this.period4.Size = new System.Drawing.Size(71, 20);
             this.period4.TabIndex = 21;
             this.period4.Text = "Period 4";
-            // 
-            // period4Absent
-            // 
-            this.period4Absent.AutoSize = true;
-            this.period4Absent.Location = new System.Drawing.Point(259, 186);
-            this.period4Absent.Name = "period4Absent";
-            this.period4Absent.Size = new System.Drawing.Size(70, 20);
-            this.period4Absent.TabIndex = 20;
-            this.period4Absent.TabStop = true;
-            this.period4Absent.Text = "Absent";
-            this.period4Absent.UseVisualStyleBackColor = true;
-            // 
-            // period4Present
-            // 
-            this.period4Present.AutoSize = true;
-            this.period4Present.Location = new System.Drawing.Point(119, 186);
-            this.period4Present.Name = "period4Present";
-            this.period4Present.Size = new System.Drawing.Size(74, 20);
-            this.period4Present.TabIndex = 19;
-            this.period4Present.TabStop = true;
-            this.period4Present.Text = "Present";
-            this.period4Present.UseVisualStyleBackColor = true;
             // 
             // period5
             // 
@@ -298,28 +223,6 @@
             this.period5.TabIndex = 24;
             this.period5.Text = "Period 5";
             // 
-            // period5Absent
-            // 
-            this.period5Absent.AutoSize = true;
-            this.period5Absent.Location = new System.Drawing.Point(259, 231);
-            this.period5Absent.Name = "period5Absent";
-            this.period5Absent.Size = new System.Drawing.Size(70, 20);
-            this.period5Absent.TabIndex = 23;
-            this.period5Absent.TabStop = true;
-            this.period5Absent.Text = "Absent";
-            this.period5Absent.UseVisualStyleBackColor = true;
-            // 
-            // period5Present
-            // 
-            this.period5Present.AutoSize = true;
-            this.period5Present.Location = new System.Drawing.Point(119, 231);
-            this.period5Present.Name = "period5Present";
-            this.period5Present.Size = new System.Drawing.Size(74, 20);
-            this.period5Present.TabIndex = 22;
-            this.period5Present.TabStop = true;
-            this.period5Present.Text = "Present";
-            this.period5Present.UseVisualStyleBackColor = true;
-            // 
             // period6
             // 
             this.period6.AutoSize = true;
@@ -329,28 +232,6 @@
             this.period6.Size = new System.Drawing.Size(71, 20);
             this.period6.TabIndex = 27;
             this.period6.Text = "Period 6";
-            // 
-            // period6Absent
-            // 
-            this.period6Absent.AutoSize = true;
-            this.period6Absent.Location = new System.Drawing.Point(259, 276);
-            this.period6Absent.Name = "period6Absent";
-            this.period6Absent.Size = new System.Drawing.Size(70, 20);
-            this.period6Absent.TabIndex = 26;
-            this.period6Absent.TabStop = true;
-            this.period6Absent.Text = "Absent";
-            this.period6Absent.UseVisualStyleBackColor = true;
-            // 
-            // period6Present
-            // 
-            this.period6Present.AutoSize = true;
-            this.period6Present.Location = new System.Drawing.Point(119, 276);
-            this.period6Present.Name = "period6Present";
-            this.period6Present.Size = new System.Drawing.Size(74, 20);
-            this.period6Present.TabIndex = 25;
-            this.period6Present.TabStop = true;
-            this.period6Present.Text = "Present";
-            this.period6Present.UseVisualStyleBackColor = true;
             // 
             // dayLabel
             // 
@@ -396,6 +277,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(482, 535);
             this.panel1.TabIndex = 29;
+            this.panel1.Visible = false;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // percentage6
@@ -696,42 +578,163 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.period6Absent);
+            this.panel2.Controls.Add(this.period6Present);
+            this.panel2.Controls.Add(this.period5Absent);
+            this.panel2.Controls.Add(this.period5Present);
+            this.panel2.Controls.Add(this.period4Absent);
+            this.panel2.Controls.Add(this.period4Present);
+            this.panel2.Controls.Add(this.period3Absent);
+            this.panel2.Controls.Add(this.period3Present);
+            this.panel2.Controls.Add(this.period2Absent);
+            this.panel2.Controls.Add(this.period2Present);
+            this.panel2.Controls.Add(this.period1Absent);
             this.panel2.Controls.Add(this.period1Present);
             this.panel2.Controls.Add(this.dayLabel);
             this.panel2.Controls.Add(this.period6);
-            this.panel2.Controls.Add(this.period6Absent);
-            this.panel2.Controls.Add(this.period6Present);
             this.panel2.Controls.Add(this.period5);
-            this.panel2.Controls.Add(this.period5Absent);
-            this.panel2.Controls.Add(this.period5Present);
             this.panel2.Controls.Add(this.period4);
-            this.panel2.Controls.Add(this.period4Absent);
-            this.panel2.Controls.Add(this.period4Present);
             this.panel2.Controls.Add(this.period3);
-            this.panel2.Controls.Add(this.period3Absent);
-            this.panel2.Controls.Add(this.period3Present);
             this.panel2.Controls.Add(this.period2);
-            this.panel2.Controls.Add(this.period2Absent);
-            this.panel2.Controls.Add(this.period2Present);
             this.panel2.Controls.Add(this.period1);
-            this.panel2.Controls.Add(this.period1Absent);
             this.panel2.Location = new System.Drawing.Point(50, 352);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(354, 318);
             this.panel2.TabIndex = 33;
+            this.panel2.Visible = false;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // period6Absent
+            // 
+            this.period6Absent.AutoSize = true;
+            this.period6Absent.Location = new System.Drawing.Point(259, 275);
+            this.period6Absent.Name = "period6Absent";
+            this.period6Absent.Size = new System.Drawing.Size(71, 20);
+            this.period6Absent.TabIndex = 40;
+            this.period6Absent.Text = "Absent";
+            this.period6Absent.UseVisualStyleBackColor = true;
+            this.period6Absent.CheckedChanged += new System.EventHandler(this.period6Absent_CheckedChanged);
+            // 
+            // period6Present
+            // 
+            this.period6Present.AutoSize = true;
+            this.period6Present.Location = new System.Drawing.Point(119, 275);
+            this.period6Present.Name = "period6Present";
+            this.period6Present.Size = new System.Drawing.Size(75, 20);
+            this.period6Present.TabIndex = 39;
+            this.period6Present.Text = "Present";
+            this.period6Present.UseVisualStyleBackColor = true;
+            this.period6Present.CheckedChanged += new System.EventHandler(this.period6Present_CheckedChanged);
+            // 
+            // period5Absent
+            // 
+            this.period5Absent.AutoSize = true;
+            this.period5Absent.Location = new System.Drawing.Point(259, 230);
+            this.period5Absent.Name = "period5Absent";
+            this.period5Absent.Size = new System.Drawing.Size(71, 20);
+            this.period5Absent.TabIndex = 38;
+            this.period5Absent.Text = "Absent";
+            this.period5Absent.UseVisualStyleBackColor = true;
+            this.period5Absent.CheckedChanged += new System.EventHandler(this.period5Absent_CheckedChanged);
+            // 
+            // period5Present
+            // 
+            this.period5Present.AutoSize = true;
+            this.period5Present.Location = new System.Drawing.Point(119, 230);
+            this.period5Present.Name = "period5Present";
+            this.period5Present.Size = new System.Drawing.Size(75, 20);
+            this.period5Present.TabIndex = 37;
+            this.period5Present.Text = "Present";
+            this.period5Present.UseVisualStyleBackColor = true;
+            this.period5Present.CheckedChanged += new System.EventHandler(this.period5Present_CheckedChanged);
+            // 
+            // period4Absent
+            // 
+            this.period4Absent.AutoSize = true;
+            this.period4Absent.Location = new System.Drawing.Point(259, 185);
+            this.period4Absent.Name = "period4Absent";
+            this.period4Absent.Size = new System.Drawing.Size(71, 20);
+            this.period4Absent.TabIndex = 36;
+            this.period4Absent.Text = "Absent";
+            this.period4Absent.UseVisualStyleBackColor = true;
+            this.period4Absent.CheckedChanged += new System.EventHandler(this.period4Absent_CheckedChanged);
+            // 
+            // period4Present
+            // 
+            this.period4Present.AutoSize = true;
+            this.period4Present.Location = new System.Drawing.Point(119, 185);
+            this.period4Present.Name = "period4Present";
+            this.period4Present.Size = new System.Drawing.Size(75, 20);
+            this.period4Present.TabIndex = 35;
+            this.period4Present.Text = "Present";
+            this.period4Present.UseVisualStyleBackColor = true;
+            this.period4Present.CheckedChanged += new System.EventHandler(this.period4Present_CheckedChanged);
+            // 
+            // period3Absent
+            // 
+            this.period3Absent.AutoSize = true;
+            this.period3Absent.Location = new System.Drawing.Point(259, 143);
+            this.period3Absent.Name = "period3Absent";
+            this.period3Absent.Size = new System.Drawing.Size(71, 20);
+            this.period3Absent.TabIndex = 34;
+            this.period3Absent.Text = "Absent";
+            this.period3Absent.UseVisualStyleBackColor = true;
+            this.period3Absent.CheckedChanged += new System.EventHandler(this.period3Absent_CheckedChanged);
+            // 
+            // period3Present
+            // 
+            this.period3Present.AutoSize = true;
+            this.period3Present.Location = new System.Drawing.Point(119, 142);
+            this.period3Present.Name = "period3Present";
+            this.period3Present.Size = new System.Drawing.Size(75, 20);
+            this.period3Present.TabIndex = 33;
+            this.period3Present.Text = "Present";
+            this.period3Present.UseVisualStyleBackColor = true;
+            this.period3Present.CheckedChanged += new System.EventHandler(this.period3Present_CheckedChanged);
+            // 
+            // period2Absent
+            // 
+            this.period2Absent.AutoSize = true;
+            this.period2Absent.Location = new System.Drawing.Point(259, 100);
+            this.period2Absent.Name = "period2Absent";
+            this.period2Absent.Size = new System.Drawing.Size(71, 20);
+            this.period2Absent.TabIndex = 32;
+            this.period2Absent.Text = "Absent";
+            this.period2Absent.UseVisualStyleBackColor = true;
+            this.period2Absent.CheckedChanged += new System.EventHandler(this.period2Absent_CheckedChanged);
+            // 
+            // period2Present
+            // 
+            this.period2Present.AutoSize = true;
+            this.period2Present.Location = new System.Drawing.Point(119, 100);
+            this.period2Present.Name = "period2Present";
+            this.period2Present.Size = new System.Drawing.Size(75, 20);
+            this.period2Present.TabIndex = 31;
+            this.period2Present.Text = "Present";
+            this.period2Present.UseVisualStyleBackColor = true;
+            this.period2Present.CheckedChanged += new System.EventHandler(this.period2Present_CheckedChanged_1);
+            // 
+            // period1Absent
+            // 
+            this.period1Absent.AutoSize = true;
+            this.period1Absent.Location = new System.Drawing.Point(259, 50);
+            this.period1Absent.Name = "period1Absent";
+            this.period1Absent.Size = new System.Drawing.Size(71, 20);
+            this.period1Absent.TabIndex = 30;
+            this.period1Absent.Text = "Absent";
+            this.period1Absent.UseVisualStyleBackColor = true;
+            this.period1Absent.CheckedChanged += new System.EventHandler(this.period1Absent_CheckedChanged_1);
             // 
             // period1Present
             // 
             this.period1Present.AutoSize = true;
-            this.period1Present.Location = new System.Drawing.Point(116, 50);
+            this.period1Present.Location = new System.Drawing.Point(119, 50);
             this.period1Present.Name = "period1Present";
-            this.period1Present.Size = new System.Drawing.Size(74, 20);
-            this.period1Present.TabIndex = 30;
-            this.period1Present.TabStop = true;
+            this.period1Present.Size = new System.Drawing.Size(75, 20);
+            this.period1Present.TabIndex = 29;
             this.period1Present.Text = "Present";
             this.period1Present.UseVisualStyleBackColor = true;
-            this.period1Present.CheckedChanged += new System.EventHandler(this.period1Present_CheckedChanged);
+            this.period1Present.CheckedChanged += new System.EventHandler(this.period1Present_CheckedChanged_1);
             // 
             // dateTimePicker1
             // 
@@ -740,6 +743,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(218, 32);
             this.dateTimePicker1.TabIndex = 32;
+            this.dateTimePicker1.Value = new System.DateTime(2025, 5, 11, 0, 0, 0, 0);
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // AttendanceRegister
@@ -747,7 +751,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1050, 793);
+            this.ClientSize = new System.Drawing.Size(1106, 793);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.showDetailsButton);
@@ -783,23 +787,12 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label dateLabel;
-        private System.Windows.Forms.RadioButton period1Absent;
         private System.Windows.Forms.Label period1;
         private System.Windows.Forms.Label period2;
-        private System.Windows.Forms.RadioButton period2Absent;
-        private System.Windows.Forms.RadioButton period2Present;
         private System.Windows.Forms.Label period3;
-        private System.Windows.Forms.RadioButton period3Absent;
-        private System.Windows.Forms.RadioButton period3Present;
         private System.Windows.Forms.Label period4;
-        private System.Windows.Forms.RadioButton period4Absent;
-        private System.Windows.Forms.RadioButton period4Present;
         private System.Windows.Forms.Label period5;
-        private System.Windows.Forms.RadioButton period5Absent;
-        private System.Windows.Forms.RadioButton period5Present;
         private System.Windows.Forms.Label period6;
-        private System.Windows.Forms.RadioButton period6Absent;
-        private System.Windows.Forms.RadioButton period6Present;
         private System.Windows.Forms.Label dayLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label idDisplay;
@@ -832,8 +825,20 @@
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.Button showDetailsButton;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton period1Present;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.CheckBox period3Absent;
+        private System.Windows.Forms.CheckBox period3Present;
+        private System.Windows.Forms.CheckBox period2Absent;
+        private System.Windows.Forms.CheckBox period2Present;
+        private System.Windows.Forms.CheckBox period1Absent;
+        private System.Windows.Forms.CheckBox period1Present;
+        private System.Windows.Forms.CheckBox period6Absent;
+        private System.Windows.Forms.CheckBox period6Present;
+        private System.Windows.Forms.CheckBox period5Absent;
+        private System.Windows.Forms.CheckBox period5Present;
+        private System.Windows.Forms.CheckBox period4Absent;
+        private System.Windows.Forms.CheckBox period4Present;
     }
 }
 

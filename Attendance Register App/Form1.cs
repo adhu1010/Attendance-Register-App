@@ -91,7 +91,7 @@ namespace Attendance_Register_App
             }
             else
             {  
-                periodAttendance[timeTable[1]] |= false;
+                periodAttendance[timeTable[1]]= false;
             }
 
             if (period3Present.Checked)
@@ -320,6 +320,7 @@ namespace Attendance_Register_App
             if (Days.Contains(CurrentDay))
             {
                 ChceckAttendance();
+                panel2.Visible = true;
             }
             else
             {
@@ -333,37 +334,60 @@ namespace Attendance_Register_App
 
 
         }
+        private bool TwoOptionSet()
+        {
+            if (period1Present.Checked && period1Absent.Checked)
+            {
+                MessageBox.Show("Please select either Present or Absent for each period.");
+                period1Present.Checked = false;
+                period1Absent.Checked = false;
 
+                return false;
+            }
+            if (period2Present.Checked && period2Absent.Checked)
+            {
+                MessageBox.Show("Please select either Present or Absent for each period.");
+                period2Present.Checked = false;
+                period2Absent.Checked = false;
+                return false;
+            }
+            if (period3Present.Checked && period3Absent.Checked)
+            {
+                MessageBox.Show("Please select either Present or Absent for each period.");
+                period3Present.Checked = false;
+                period3Absent.Checked = false;
+                return false;
+            }
+            if (period4Present.Checked && period4Absent.Checked)
+            {
+                MessageBox.Show("Please select either Present or Absent for each period.");
+                period4Present.Checked = false;
+                period4Absent.Checked = false;
+                return false;
+            }
+            if (period5Present.Checked && period5Absent.Checked)
+            {
+                MessageBox.Show("Please select either Present or Absent for each period.");
+                period5Present.Checked = false;
+                period5Absent.Checked = false;
+                return false;
+            }
+            if (period6Present.Checked && period6Absent.Checked)
+            {
+                MessageBox.Show("Please select either Present or Absent for each period.");
+                period6Present.Checked = false;
+                period6Absent.Checked = false;
+                return false;
+            }
+            return true;
+
+        }
         private void period1_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void period1Present_CheckedChanged(object sender, EventArgs e)
-        {   
-            List<string> timeTable = Subjects[CurrentDay];
-            if (period1Present.Checked)
-            {
-                period1.BackColor = Color.LightGreen;
-                periodAttendance[timeTable[0]] = true;
-            }
-            else
-            {
-                period1.BackColor = Color.LightCoral;
-                periodAttendance[timeTable[0]] = false;
-            }
-            if(period2Present.Checked)
-            {
-                BackColor = Color.LightGreen;
-                periodAttendance[timeTable[0]] = true;
-            }
-            else
-            {
-                period1.BackColor = Color.LightCoral;
-                periodAttendance[timeTable[0]] = false;
-            }
-
-        }
+        
+        
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
@@ -372,22 +396,162 @@ namespace Attendance_Register_App
 
         private void showDetailsButton_Click(object sender, EventArgs e)
         {
-            
+            attendancePercentages = GetAttendancePercentage(out Dictionary<string, List<int[]>> totalAttendance);
+            DisplayInfo(attendancePercentages, totalAttendance);
+            panel1.Visible = true;
         }
 
         private void submitButton_Click(object sender, EventArgs e)
         {
                 
-                EnterAttendance();
-                MarkAttendance(date, periodAttendance);
-                attendancePercentages = GetAttendancePercentage(out Dictionary<string, List<int[]>> totalAttendance);
-                DisplayInfo(attendancePercentages, totalAttendance);
-        }
+            EnterAttendance();
+            
+            MarkAttendance(date, periodAttendance);
+            MessageBox.Show("Attendance submitted successfully!");
+            panel2.Visible = false;
+            ResetAttendance();
+            dateTimePicker1.Enabled = true;
 
+        }
+        private void ResetAttendance()
+        {
+            period1Present.Checked = false;
+            period1Absent.Checked = false;
+            period2Present.Checked = false;
+            period2Absent.Checked = false;
+            period3Present.Checked = false;
+            period3Absent.Checked = false;
+            period4Present.Checked = false;
+            period4Absent.Checked = false;
+            period5Present.Checked = false;
+            period5Absent.Checked = false;
+            period6Present.Checked = false;
+            period6Absent.Checked = false;
+            period1.BackColor = Color.White;
+            period2.BackColor = Color.White;
+            period3.BackColor = Color.White;
+            period4.BackColor = Color.White;
+            period5.BackColor = Color.White;
+            period6.BackColor = Color.White;
+        }
         private void label10_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void period2_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void period1Present_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (!TwoOptionSet())
+            {
+                return;
+            }
+            period1.BackColor = Color.LightGreen;
+            
+        }
+
+        private void period1Absent_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (!TwoOptionSet())
+            {
+                return;
+            }
+            period1.BackColor = Color.LightCoral;
+        }
+
+        private void period2Present_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (!TwoOptionSet())
+            {
+                return;
+            }
+            period2.BackColor = Color.LightGreen;
+        }
+
+        private void period2Absent_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!TwoOptionSet())
+            {
+                return;
+            }
+            period2.BackColor = Color.LightCoral;
+        }
+        private void period3Present_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!TwoOptionSet())
+            {
+                return;
+            }
+            period3.BackColor = Color.LightGreen;
+        }
+
+        private void period3Absent_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!TwoOptionSet())
+            {
+                return;
+            }
+            period3.BackColor = Color.LightCoral;
+        }
+
+        private void period4Present_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!TwoOptionSet())
+            {
+                return;
+            }
+            period4.BackColor = Color.LightGreen;
+        }
+
+        private void period4Absent_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!TwoOptionSet())
+            {
+                return;
+            }
+            period4.BackColor = Color.LightCoral;
+        }
+
+        private void period5Present_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!TwoOptionSet())
+            {
+                return;
+            }
+            period5.BackColor = Color.LightGreen;
+        }
+
+        private void period5Absent_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!TwoOptionSet())
+            {
+                return;
+            }
+            period5.BackColor = Color.LightCoral;
+        }
+
+        private void period6Present_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!TwoOptionSet())
+            {
+                return;
+            }
+            period6.BackColor = Color.LightGreen;
+        }
+
+        private void period6Absent_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!TwoOptionSet())
+            {
+                return;
+            }
+            period6.BackColor = Color.LightCoral;
+        }
+
+        
     }
 }
 
