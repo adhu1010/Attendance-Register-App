@@ -34,9 +34,6 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel6 = new System.Windows.Forms.Panel();
             this.backButton = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -93,12 +90,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel6.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // dateLabel
@@ -112,30 +110,32 @@
             // 
             // submitButton
             // 
-            this.submitButton.Location = new System.Drawing.Point(54, 698);
+            this.submitButton.Location = new System.Drawing.Point(0, 0);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(158, 42);
-            this.submitButton.TabIndex = 30;
+            this.submitButton.TabIndex = 16;
             this.submitButton.Text = "SUBMIT";
             this.submitButton.UseVisualStyleBackColor = true;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // showDetailsButton
             // 
-            this.showDetailsButton.Location = new System.Drawing.Point(266, 698);
+            this.showDetailsButton.Enabled = false;
+            this.showDetailsButton.Location = new System.Drawing.Point(207, -1);
             this.showDetailsButton.Name = "showDetailsButton";
-            this.showDetailsButton.Size = new System.Drawing.Size(158, 42);
-            this.showDetailsButton.TabIndex = 31;
+            this.showDetailsButton.Size = new System.Drawing.Size(149, 42);
+            this.showDetailsButton.TabIndex = 17;
             this.showDetailsButton.Text = "DETAILS";
             this.showDetailsButton.UseVisualStyleBackColor = true;
             this.showDetailsButton.Click += new System.EventHandler(this.showDetailsButton_Click);
             // 
             // panel6
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel6.Controls.Add(this.backButton);
-            this.panel6.Location = new System.Drawing.Point(41, 698);
+            this.panel6.Controls.Add(this.submitButton);
+            this.panel6.Controls.Add(this.showDetailsButton);
+            this.panel6.Location = new System.Drawing.Point(70, 720);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(613, 41);
             this.panel6.TabIndex = 36;
@@ -146,53 +146,16 @@
             this.backButton.Location = new System.Drawing.Point(433, 0);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(135, 41);
-            this.backButton.TabIndex = 0;
+            this.backButton.TabIndex = 18;
             this.backButton.Text = "BACK";
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Location = new System.Drawing.Point(338, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(516, 57);
-            this.panel4.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(436, 39);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "ATTENDANCE REGISTER";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(35, 25);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(957, 623);
-            this.tableLayoutPanel1.TabIndex = 2;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint_1);
             // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.AutoSize = true;
             this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel3.Controls.Add(this.dateTimePicker1);
             this.panel3.Controls.Add(this.textBox2);
@@ -201,9 +164,9 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Location = new System.Drawing.Point(70, 85);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(508, 515);
+            this.panel3.Size = new System.Drawing.Size(553, 253);
             this.panel3.TabIndex = 35;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_1);
             // 
@@ -215,8 +178,9 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(287, 171);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(218, 32);
-            this.dateTimePicker1.TabIndex = 32;
+            this.dateTimePicker1.TabIndex = 3;
             this.dateTimePicker1.Value = new System.DateTime(2025, 5, 11, 0, 0, 0, 0);
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged_1);
             // 
             // textBox2
             // 
@@ -226,7 +190,8 @@
             this.textBox2.Location = new System.Drawing.Point(214, 131);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(164, 26);
-            this.textBox2.TabIndex = 5;
+            this.textBox2.TabIndex = 2;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // textBox1
             // 
@@ -234,7 +199,8 @@
             this.textBox1.Location = new System.Drawing.Point(128, 90);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(164, 26);
-            this.textBox1.TabIndex = 2;
+            this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // label2
             // 
@@ -289,6 +255,8 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.Controls.Add(this.period6Absent);
             this.panel2.Controls.Add(this.period6Present);
             this.panel2.Controls.Add(this.period5Absent);
@@ -301,18 +269,19 @@
             this.panel2.Controls.Add(this.period2Present);
             this.panel2.Controls.Add(this.period1Absent);
             this.panel2.Controls.Add(this.period1Present);
-            this.panel2.Controls.Add(this.dayLabel);
             this.panel2.Controls.Add(this.period6);
             this.panel2.Controls.Add(this.period5);
             this.panel2.Controls.Add(this.period4);
             this.panel2.Controls.Add(this.period3);
             this.panel2.Controls.Add(this.period2);
             this.panel2.Controls.Add(this.period1);
-            this.panel2.Location = new System.Drawing.Point(3, 524);
+            this.panel2.Controls.Add(this.dayLabel);
+            this.panel2.Location = new System.Drawing.Point(96, 340);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(354, 318);
+            this.panel2.Size = new System.Drawing.Size(354, 336);
             this.panel2.TabIndex = 36;
             this.panel2.Visible = false;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_1);
             // 
             // period6Absent
             // 
@@ -320,9 +289,10 @@
             this.period6Absent.Location = new System.Drawing.Point(259, 275);
             this.period6Absent.Name = "period6Absent";
             this.period6Absent.Size = new System.Drawing.Size(71, 20);
-            this.period6Absent.TabIndex = 40;
+            this.period6Absent.TabIndex = 15;
             this.period6Absent.Text = "Absent";
             this.period6Absent.UseVisualStyleBackColor = true;
+            this.period6Absent.CheckedChanged += new System.EventHandler(this.period6Absent_CheckedChanged_1);
             // 
             // period6Present
             // 
@@ -330,9 +300,10 @@
             this.period6Present.Location = new System.Drawing.Point(119, 275);
             this.period6Present.Name = "period6Present";
             this.period6Present.Size = new System.Drawing.Size(75, 20);
-            this.period6Present.TabIndex = 39;
+            this.period6Present.TabIndex = 14;
             this.period6Present.Text = "Present";
             this.period6Present.UseVisualStyleBackColor = true;
+            this.period6Present.CheckedChanged += new System.EventHandler(this.period6Present_CheckedChanged_1);
             // 
             // period5Absent
             // 
@@ -340,9 +311,10 @@
             this.period5Absent.Location = new System.Drawing.Point(259, 230);
             this.period5Absent.Name = "period5Absent";
             this.period5Absent.Size = new System.Drawing.Size(71, 20);
-            this.period5Absent.TabIndex = 38;
+            this.period5Absent.TabIndex = 13;
             this.period5Absent.Text = "Absent";
             this.period5Absent.UseVisualStyleBackColor = true;
+            this.period5Absent.CheckedChanged += new System.EventHandler(this.period5Absent_CheckedChanged_1);
             // 
             // period5Present
             // 
@@ -350,9 +322,10 @@
             this.period5Present.Location = new System.Drawing.Point(119, 230);
             this.period5Present.Name = "period5Present";
             this.period5Present.Size = new System.Drawing.Size(75, 20);
-            this.period5Present.TabIndex = 37;
+            this.period5Present.TabIndex = 12;
             this.period5Present.Text = "Present";
             this.period5Present.UseVisualStyleBackColor = true;
+            this.period5Present.CheckedChanged += new System.EventHandler(this.period5Present_CheckedChanged_1);
             // 
             // period4Absent
             // 
@@ -360,9 +333,10 @@
             this.period4Absent.Location = new System.Drawing.Point(259, 185);
             this.period4Absent.Name = "period4Absent";
             this.period4Absent.Size = new System.Drawing.Size(71, 20);
-            this.period4Absent.TabIndex = 36;
+            this.period4Absent.TabIndex = 11;
             this.period4Absent.Text = "Absent";
             this.period4Absent.UseVisualStyleBackColor = true;
+            this.period4Absent.CheckedChanged += new System.EventHandler(this.period4Absent_CheckedChanged_1);
             // 
             // period4Present
             // 
@@ -370,9 +344,10 @@
             this.period4Present.Location = new System.Drawing.Point(119, 185);
             this.period4Present.Name = "period4Present";
             this.period4Present.Size = new System.Drawing.Size(75, 20);
-            this.period4Present.TabIndex = 35;
+            this.period4Present.TabIndex = 10;
             this.period4Present.Text = "Present";
             this.period4Present.UseVisualStyleBackColor = true;
+            this.period4Present.CheckedChanged += new System.EventHandler(this.period4Present_CheckedChanged_1);
             // 
             // period3Absent
             // 
@@ -380,9 +355,10 @@
             this.period3Absent.Location = new System.Drawing.Point(259, 143);
             this.period3Absent.Name = "period3Absent";
             this.period3Absent.Size = new System.Drawing.Size(71, 20);
-            this.period3Absent.TabIndex = 34;
+            this.period3Absent.TabIndex = 9;
             this.period3Absent.Text = "Absent";
             this.period3Absent.UseVisualStyleBackColor = true;
+            this.period3Absent.CheckedChanged += new System.EventHandler(this.period3Absent_CheckedChanged_1);
             // 
             // period3Present
             // 
@@ -390,9 +366,10 @@
             this.period3Present.Location = new System.Drawing.Point(119, 142);
             this.period3Present.Name = "period3Present";
             this.period3Present.Size = new System.Drawing.Size(75, 20);
-            this.period3Present.TabIndex = 33;
+            this.period3Present.TabIndex = 8;
             this.period3Present.Text = "Present";
             this.period3Present.UseVisualStyleBackColor = true;
+            this.period3Present.CheckedChanged += new System.EventHandler(this.period3Present_CheckedChanged_1);
             // 
             // period2Absent
             // 
@@ -400,9 +377,10 @@
             this.period2Absent.Location = new System.Drawing.Point(259, 100);
             this.period2Absent.Name = "period2Absent";
             this.period2Absent.Size = new System.Drawing.Size(71, 20);
-            this.period2Absent.TabIndex = 32;
+            this.period2Absent.TabIndex = 7;
             this.period2Absent.Text = "Absent";
             this.period2Absent.UseVisualStyleBackColor = true;
+            this.period2Absent.CheckedChanged += new System.EventHandler(this.period2Absent_CheckedChanged_1);
             // 
             // period2Present
             // 
@@ -410,9 +388,10 @@
             this.period2Present.Location = new System.Drawing.Point(119, 100);
             this.period2Present.Name = "period2Present";
             this.period2Present.Size = new System.Drawing.Size(75, 20);
-            this.period2Present.TabIndex = 31;
+            this.period2Present.TabIndex = 6;
             this.period2Present.Text = "Present";
             this.period2Present.UseVisualStyleBackColor = true;
+            this.period2Present.CheckedChanged += new System.EventHandler(this.period2Present_CheckedChanged);
             // 
             // period1Absent
             // 
@@ -420,9 +399,10 @@
             this.period1Absent.Location = new System.Drawing.Point(259, 50);
             this.period1Absent.Name = "period1Absent";
             this.period1Absent.Size = new System.Drawing.Size(71, 20);
-            this.period1Absent.TabIndex = 30;
+            this.period1Absent.TabIndex = 5;
             this.period1Absent.Text = "Absent";
             this.period1Absent.UseVisualStyleBackColor = true;
+            this.period1Absent.CheckedChanged += new System.EventHandler(this.period1Absent_CheckedChanged);
             // 
             // period1Present
             // 
@@ -430,9 +410,10 @@
             this.period1Present.Location = new System.Drawing.Point(119, 50);
             this.period1Present.Name = "period1Present";
             this.period1Present.Size = new System.Drawing.Size(75, 20);
-            this.period1Present.TabIndex = 29;
+            this.period1Present.TabIndex = 4;
             this.period1Present.Text = "Present";
             this.period1Present.UseVisualStyleBackColor = true;
+            this.period1Present.CheckedChanged += new System.EventHandler(this.period1Present_CheckedChanged);
             // 
             // dayLabel
             // 
@@ -509,7 +490,6 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.percentage6);
             this.panel1.Controls.Add(this.percentage5);
             this.panel1.Controls.Add(this.percentage4);
@@ -537,11 +517,12 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(517, 3);
+            this.panel1.Location = new System.Drawing.Point(660, 85);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(482, 515);
+            this.panel1.Size = new System.Drawing.Size(482, 604);
             this.panel1.TabIndex = 37;
             this.panel1.Visible = false;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // percentage6
             // 
@@ -752,6 +733,7 @@
             this.subject1.Size = new System.Drawing.Size(79, 20);
             this.subject1.TabIndex = 30;
             this.subject1.Text = "Subject 1";
+            this.subject1.Click += new System.EventHandler(this.subject1_Click);
             // 
             // idDisplay
             // 
@@ -805,14 +787,34 @@
             // 
             // label6
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(13, 9);
+            this.label6.Location = new System.Drawing.Point(13, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(294, 29);
             this.label6.TabIndex = 2;
             this.label6.Text = "ATTENDANCE DETAILS";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(86, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(436, 39);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "ATTENDANCE REGISTER";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Location = new System.Drawing.Point(338, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(584, 57);
+            this.panel4.TabIndex = 0;
             // 
             // AttendanceRegister
             // 
@@ -820,26 +822,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1310, 793);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.showDetailsButton);
-            this.Controls.Add(this.submitButton);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.panel6);
             this.Name = "AttendanceRegister";
             this.Text = "ATTENDANCE REGISTER";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel6.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -852,9 +852,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button backButton;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox2;
@@ -911,6 +908,8 @@
         private System.Windows.Forms.Label period3;
         private System.Windows.Forms.Label period2;
         private System.Windows.Forms.Label period1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel4;
     }
 }
 
