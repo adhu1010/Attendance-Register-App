@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -398,6 +399,8 @@ namespace Attendance_Register_App
         {
             attendancePercentages = GetAttendancePercentage(out Dictionary<string, List<int[]>> totalAttendance);
             DisplayInfo(attendancePercentages, totalAttendance);
+            panel2.Visible = false;
+            panel3.Visible = false;
             panel1.Visible = true;
         }
 
@@ -449,7 +452,8 @@ namespace Attendance_Register_App
             {
                 return;
             }
-            period1.BackColor = Color.LightGreen;
+            else
+                period1.BackColor = Color.LightGreen;
             
         }
 
@@ -459,7 +463,8 @@ namespace Attendance_Register_App
             {
                 return;
             }
-            period1.BackColor = Color.LightCoral;
+            else
+                period1.BackColor = Color.LightCoral;
         }
 
         private void period2Present_CheckedChanged_1(object sender, EventArgs e)
@@ -468,7 +473,8 @@ namespace Attendance_Register_App
             {
                 return;
             }
-            period2.BackColor = Color.LightGreen;
+            else
+                period2.BackColor = Color.LightGreen;
         }
 
         private void period2Absent_CheckedChanged(object sender, EventArgs e)
@@ -477,7 +483,8 @@ namespace Attendance_Register_App
             {
                 return;
             }
-            period2.BackColor = Color.LightCoral;
+            else
+                period2.BackColor = Color.LightCoral;
         }
         private void period3Present_CheckedChanged(object sender, EventArgs e)
         {
@@ -485,7 +492,8 @@ namespace Attendance_Register_App
             {
                 return;
             }
-            period3.BackColor = Color.LightGreen;
+            else
+                period3.BackColor = Color.LightGreen;
         }
 
         private void period3Absent_CheckedChanged(object sender, EventArgs e)
@@ -494,7 +502,8 @@ namespace Attendance_Register_App
             {
                 return;
             }
-            period3.BackColor = Color.LightCoral;
+            else
+                period3.BackColor = Color.LightCoral;
         }
 
         private void period4Present_CheckedChanged(object sender, EventArgs e)
@@ -503,7 +512,8 @@ namespace Attendance_Register_App
             {
                 return;
             }
-            period4.BackColor = Color.LightGreen;
+            else
+                period4.BackColor = Color.LightGreen;
         }
 
         private void period4Absent_CheckedChanged(object sender, EventArgs e)
@@ -512,7 +522,8 @@ namespace Attendance_Register_App
             {
                 return;
             }
-            period4.BackColor = Color.LightCoral;
+            else
+                period4.BackColor = Color.LightCoral;
         }
 
         private void period5Present_CheckedChanged(object sender, EventArgs e)
@@ -521,7 +532,8 @@ namespace Attendance_Register_App
             {
                 return;
             }
-            period5.BackColor = Color.LightGreen;
+            else
+                period5.BackColor = Color.LightGreen;
         }
 
         private void period5Absent_CheckedChanged(object sender, EventArgs e)
@@ -530,7 +542,8 @@ namespace Attendance_Register_App
             {
                 return;
             }
-            period5.BackColor = Color.LightCoral;
+            else
+                period5.BackColor = Color.LightCoral;
         }
 
         private void period6Present_CheckedChanged(object sender, EventArgs e)
@@ -539,7 +552,8 @@ namespace Attendance_Register_App
             {
                 return;
             }
-            period6.BackColor = Color.LightGreen;
+            else 
+                period6.BackColor = Color.LightGreen;
         }
 
         private void period6Absent_CheckedChanged(object sender, EventArgs e)
@@ -548,10 +562,31 @@ namespace Attendance_Register_App
             {
                 return;
             }
-            period6.BackColor = Color.LightCoral;
+            else
+                period6.BackColor = Color.LightCoral;
         }
 
-        
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void ClearText()
+        {
+            textBox1.Text = string.Empty;
+            textBox2.Text = string.Empty;
+            dateTimePicker1.Value = DateTime.Now;
+        }
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            ClearText();
+            panel3.Visible = true;
+            panel1.Visible = false;
+        }
     }
 }
 
