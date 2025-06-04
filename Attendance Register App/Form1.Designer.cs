@@ -55,13 +55,13 @@
             this.period2Present = new System.Windows.Forms.CheckBox();
             this.period1Absent = new System.Windows.Forms.CheckBox();
             this.period1Present = new System.Windows.Forms.CheckBox();
-            this.dayLabel = new System.Windows.Forms.Label();
             this.period6 = new System.Windows.Forms.Label();
             this.period5 = new System.Windows.Forms.Label();
             this.period4 = new System.Windows.Forms.Label();
             this.period3 = new System.Windows.Forms.Label();
             this.period2 = new System.Windows.Forms.Label();
             this.period1 = new System.Windows.Forms.Label();
+            this.dayLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.percentage6 = new System.Windows.Forms.Label();
             this.percentage5 = new System.Windows.Forms.Label();
@@ -92,6 +92,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.teacherName = new Attendance_Register_App.UserControl1();
+            this.Label10 = new System.Windows.Forms.Label();
+            this.teacherLabel = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -293,6 +296,7 @@
             this.period6Absent.Text = "Absent";
             this.period6Absent.UseVisualStyleBackColor = true;
             this.period6Absent.CheckedChanged += new System.EventHandler(this.period6Absent_CheckedChanged_1);
+            this.period6Absent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.period6Absent_KeyDown);
             // 
             // period6Present
             // 
@@ -304,6 +308,7 @@
             this.period6Present.Text = "Present";
             this.period6Present.UseVisualStyleBackColor = true;
             this.period6Present.CheckedChanged += new System.EventHandler(this.period6Present_CheckedChanged_1);
+            this.period6Present.KeyDown += new System.Windows.Forms.KeyEventHandler(this.period6Present_KeyDown);
             // 
             // period5Absent
             // 
@@ -315,6 +320,7 @@
             this.period5Absent.Text = "Absent";
             this.period5Absent.UseVisualStyleBackColor = true;
             this.period5Absent.CheckedChanged += new System.EventHandler(this.period5Absent_CheckedChanged_1);
+            this.period5Absent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.period5Absent_KeyDown);
             // 
             // period5Present
             // 
@@ -326,6 +332,7 @@
             this.period5Present.Text = "Present";
             this.period5Present.UseVisualStyleBackColor = true;
             this.period5Present.CheckedChanged += new System.EventHandler(this.period5Present_CheckedChanged_1);
+            this.period5Present.KeyDown += new System.Windows.Forms.KeyEventHandler(this.period5Present_KeyDown);
             // 
             // period4Absent
             // 
@@ -337,6 +344,7 @@
             this.period4Absent.Text = "Absent";
             this.period4Absent.UseVisualStyleBackColor = true;
             this.period4Absent.CheckedChanged += new System.EventHandler(this.period4Absent_CheckedChanged_1);
+            this.period4Absent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.period4Absent_KeyDown);
             // 
             // period4Present
             // 
@@ -348,6 +356,7 @@
             this.period4Present.Text = "Present";
             this.period4Present.UseVisualStyleBackColor = true;
             this.period4Present.CheckedChanged += new System.EventHandler(this.period4Present_CheckedChanged_1);
+            this.period4Present.KeyDown += new System.Windows.Forms.KeyEventHandler(this.period4Present_KeyDown);
             // 
             // period3Absent
             // 
@@ -359,6 +368,7 @@
             this.period3Absent.Text = "Absent";
             this.period3Absent.UseVisualStyleBackColor = true;
             this.period3Absent.CheckedChanged += new System.EventHandler(this.period3Absent_CheckedChanged_1);
+            this.period3Absent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.period3Absent_KeyDown);
             // 
             // period3Present
             // 
@@ -370,6 +380,7 @@
             this.period3Present.Text = "Present";
             this.period3Present.UseVisualStyleBackColor = true;
             this.period3Present.CheckedChanged += new System.EventHandler(this.period3Present_CheckedChanged_1);
+            this.period3Present.KeyDown += new System.Windows.Forms.KeyEventHandler(this.period3Present_KeyDown);
             // 
             // period2Absent
             // 
@@ -381,6 +392,7 @@
             this.period2Absent.Text = "Absent";
             this.period2Absent.UseVisualStyleBackColor = true;
             this.period2Absent.CheckedChanged += new System.EventHandler(this.period2Absent_CheckedChanged_1);
+            this.period2Absent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.period2Absent_KeyDown);
             // 
             // period2Present
             // 
@@ -392,6 +404,7 @@
             this.period2Present.Text = "Present";
             this.period2Present.UseVisualStyleBackColor = true;
             this.period2Present.CheckedChanged += new System.EventHandler(this.period2Present_CheckedChanged);
+            this.period2Present.KeyDown += new System.Windows.Forms.KeyEventHandler(this.period2Present_KeyDown);
             // 
             // period1Absent
             // 
@@ -403,6 +416,7 @@
             this.period1Absent.Text = "Absent";
             this.period1Absent.UseVisualStyleBackColor = true;
             this.period1Absent.CheckedChanged += new System.EventHandler(this.period1Absent_CheckedChanged);
+            this.period1Absent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.period1Absent_KeyDown);
             // 
             // period1Present
             // 
@@ -414,16 +428,7 @@
             this.period1Present.Text = "Present";
             this.period1Present.UseVisualStyleBackColor = true;
             this.period1Present.CheckedChanged += new System.EventHandler(this.period1Present_CheckedChanged);
-            // 
-            // dayLabel
-            // 
-            this.dayLabel.AutoSize = true;
-            this.dayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dayLabel.Location = new System.Drawing.Point(2, 4);
-            this.dayLabel.Name = "dayLabel";
-            this.dayLabel.Size = new System.Drawing.Size(183, 26);
-            this.dayLabel.TabIndex = 28;
-            this.dayLabel.Text = "CURRENT DATE";
+            this.period1Present.KeyDown += new System.Windows.Forms.KeyEventHandler(this.period1Present_KeyDown);
             // 
             // period6
             // 
@@ -485,11 +490,23 @@
             this.period1.TabIndex = 12;
             this.period1.Text = "Period 1";
             // 
+            // dayLabel
+            // 
+            this.dayLabel.AutoSize = true;
+            this.dayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dayLabel.Location = new System.Drawing.Point(2, 4);
+            this.dayLabel.Name = "dayLabel";
+            this.dayLabel.Size = new System.Drawing.Size(183, 26);
+            this.dayLabel.TabIndex = 28;
+            this.dayLabel.Text = "CURRENT DATE";
+            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.teacherLabel);
+            this.panel1.Controls.Add(this.Label10);
             this.panel1.Controls.Add(this.percentage6);
             this.panel1.Controls.Add(this.percentage5);
             this.panel1.Controls.Add(this.percentage4);
@@ -517,7 +534,7 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(660, 85);
+            this.panel1.Location = new System.Drawing.Point(666, 85);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(482, 604);
             this.panel1.TabIndex = 37;
@@ -528,7 +545,7 @@
             // 
             this.percentage6.AutoSize = true;
             this.percentage6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.percentage6.Location = new System.Drawing.Point(361, 495);
+            this.percentage6.Location = new System.Drawing.Point(355, 542);
             this.percentage6.Name = "percentage6";
             this.percentage6.Size = new System.Drawing.Size(108, 20);
             this.percentage6.TabIndex = 48;
@@ -538,7 +555,7 @@
             // 
             this.percentage5.AutoSize = true;
             this.percentage5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.percentage5.Location = new System.Drawing.Point(361, 448);
+            this.percentage5.Location = new System.Drawing.Point(355, 495);
             this.percentage5.Name = "percentage5";
             this.percentage5.Size = new System.Drawing.Size(108, 20);
             this.percentage5.TabIndex = 47;
@@ -548,7 +565,7 @@
             // 
             this.percentage4.AutoSize = true;
             this.percentage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.percentage4.Location = new System.Drawing.Point(361, 402);
+            this.percentage4.Location = new System.Drawing.Point(355, 449);
             this.percentage4.Name = "percentage4";
             this.percentage4.Size = new System.Drawing.Size(108, 20);
             this.percentage4.TabIndex = 46;
@@ -558,7 +575,7 @@
             // 
             this.percentage3.AutoSize = true;
             this.percentage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.percentage3.Location = new System.Drawing.Point(361, 358);
+            this.percentage3.Location = new System.Drawing.Point(355, 405);
             this.percentage3.Name = "percentage3";
             this.percentage3.Size = new System.Drawing.Size(108, 20);
             this.percentage3.TabIndex = 45;
@@ -568,7 +585,7 @@
             // 
             this.percentage2.AutoSize = true;
             this.percentage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.percentage2.Location = new System.Drawing.Point(361, 315);
+            this.percentage2.Location = new System.Drawing.Point(355, 362);
             this.percentage2.Name = "percentage2";
             this.percentage2.Size = new System.Drawing.Size(108, 20);
             this.percentage2.TabIndex = 44;
@@ -578,7 +595,7 @@
             // 
             this.subject5Attendance.AutoSize = true;
             this.subject5Attendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subject5Attendance.Location = new System.Drawing.Point(206, 448);
+            this.subject5Attendance.Location = new System.Drawing.Point(200, 495);
             this.subject5Attendance.Name = "subject5Attendance";
             this.subject5Attendance.Size = new System.Drawing.Size(111, 20);
             this.subject5Attendance.TabIndex = 43;
@@ -588,7 +605,7 @@
             // 
             this.subject6Attendance.AutoSize = true;
             this.subject6Attendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subject6Attendance.Location = new System.Drawing.Point(206, 495);
+            this.subject6Attendance.Location = new System.Drawing.Point(200, 542);
             this.subject6Attendance.Name = "subject6Attendance";
             this.subject6Attendance.Size = new System.Drawing.Size(102, 20);
             this.subject6Attendance.TabIndex = 42;
@@ -598,7 +615,7 @@
             // 
             this.subject4Attendance.AutoSize = true;
             this.subject4Attendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subject4Attendance.Location = new System.Drawing.Point(206, 402);
+            this.subject4Attendance.Location = new System.Drawing.Point(200, 449);
             this.subject4Attendance.Name = "subject4Attendance";
             this.subject4Attendance.Size = new System.Drawing.Size(107, 20);
             this.subject4Attendance.TabIndex = 41;
@@ -608,7 +625,7 @@
             // 
             this.subject3Attendance.AutoSize = true;
             this.subject3Attendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subject3Attendance.Location = new System.Drawing.Point(207, 358);
+            this.subject3Attendance.Location = new System.Drawing.Point(201, 405);
             this.subject3Attendance.Name = "subject3Attendance";
             this.subject3Attendance.Size = new System.Drawing.Size(107, 20);
             this.subject3Attendance.TabIndex = 31;
@@ -618,7 +635,7 @@
             // 
             this.subject2Attendance.AutoSize = true;
             this.subject2Attendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subject2Attendance.Location = new System.Drawing.Point(206, 315);
+            this.subject2Attendance.Location = new System.Drawing.Point(200, 362);
             this.subject2Attendance.Name = "subject2Attendance";
             this.subject2Attendance.Size = new System.Drawing.Size(107, 20);
             this.subject2Attendance.TabIndex = 32;
@@ -628,7 +645,7 @@
             // 
             this.percentage1.AutoSize = true;
             this.percentage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.percentage1.Location = new System.Drawing.Point(361, 268);
+            this.percentage1.Location = new System.Drawing.Point(355, 315);
             this.percentage1.Name = "percentage1";
             this.percentage1.Size = new System.Drawing.Size(108, 20);
             this.percentage1.TabIndex = 40;
@@ -638,7 +655,7 @@
             // 
             this.subject1Attendance.AutoSize = true;
             this.subject1Attendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subject1Attendance.Location = new System.Drawing.Point(207, 268);
+            this.subject1Attendance.Location = new System.Drawing.Point(201, 315);
             this.subject1Attendance.Name = "subject1Attendance";
             this.subject1Attendance.Size = new System.Drawing.Size(102, 20);
             this.subject1Attendance.TabIndex = 39;
@@ -648,7 +665,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(331, 228);
+            this.label20.Location = new System.Drawing.Point(325, 275);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(148, 25);
             this.label20.TabIndex = 38;
@@ -658,7 +675,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(171, 228);
+            this.label19.Location = new System.Drawing.Point(165, 275);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(154, 25);
             this.label19.TabIndex = 37;
@@ -668,7 +685,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(30, 228);
+            this.label18.Location = new System.Drawing.Point(24, 275);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(105, 25);
             this.label18.TabIndex = 36;
@@ -678,7 +695,7 @@
             // 
             this.subject6.AutoSize = true;
             this.subject6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subject6.Location = new System.Drawing.Point(30, 495);
+            this.subject6.Location = new System.Drawing.Point(24, 542);
             this.subject6.Name = "subject6";
             this.subject6.Size = new System.Drawing.Size(79, 20);
             this.subject6.TabIndex = 35;
@@ -688,7 +705,7 @@
             // 
             this.subject5.AutoSize = true;
             this.subject5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subject5.Location = new System.Drawing.Point(30, 448);
+            this.subject5.Location = new System.Drawing.Point(24, 495);
             this.subject5.Name = "subject5";
             this.subject5.Size = new System.Drawing.Size(79, 20);
             this.subject5.TabIndex = 34;
@@ -698,7 +715,7 @@
             // 
             this.subject4.AutoSize = true;
             this.subject4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subject4.Location = new System.Drawing.Point(30, 402);
+            this.subject4.Location = new System.Drawing.Point(24, 449);
             this.subject4.Name = "subject4";
             this.subject4.Size = new System.Drawing.Size(79, 20);
             this.subject4.TabIndex = 33;
@@ -708,7 +725,7 @@
             // 
             this.subject3.AutoSize = true;
             this.subject3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subject3.Location = new System.Drawing.Point(30, 358);
+            this.subject3.Location = new System.Drawing.Point(24, 405);
             this.subject3.Name = "subject3";
             this.subject3.Size = new System.Drawing.Size(79, 20);
             this.subject3.TabIndex = 32;
@@ -718,7 +735,7 @@
             // 
             this.subject2.AutoSize = true;
             this.subject2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subject2.Location = new System.Drawing.Point(30, 315);
+            this.subject2.Location = new System.Drawing.Point(24, 362);
             this.subject2.Name = "subject2";
             this.subject2.Size = new System.Drawing.Size(79, 20);
             this.subject2.TabIndex = 31;
@@ -728,7 +745,7 @@
             // 
             this.subject1.AutoSize = true;
             this.subject1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subject1.Location = new System.Drawing.Point(30, 268);
+            this.subject1.Location = new System.Drawing.Point(24, 315);
             this.subject1.Name = "subject1";
             this.subject1.Size = new System.Drawing.Size(79, 20);
             this.subject1.TabIndex = 30;
@@ -739,7 +756,7 @@
             // 
             this.idDisplay.AutoSize = true;
             this.idDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idDisplay.Location = new System.Drawing.Point(206, 129);
+            this.idDisplay.Location = new System.Drawing.Point(225, 171);
             this.idDisplay.Name = "idDisplay";
             this.idDisplay.Size = new System.Drawing.Size(129, 26);
             this.idDisplay.TabIndex = 9;
@@ -749,7 +766,7 @@
             // 
             this.nameDisplay.AutoSize = true;
             this.nameDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameDisplay.Location = new System.Drawing.Point(107, 87);
+            this.nameDisplay.Location = new System.Drawing.Point(127, 129);
             this.nameDisplay.Name = "nameDisplay";
             this.nameDisplay.Size = new System.Drawing.Size(129, 26);
             this.nameDisplay.TabIndex = 8;
@@ -759,7 +776,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(13, 175);
+            this.label9.Location = new System.Drawing.Point(24, 217);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(318, 26);
             this.label9.TabIndex = 7;
@@ -769,7 +786,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(13, 129);
+            this.label8.Location = new System.Drawing.Point(23, 171);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(187, 26);
             this.label8.TabIndex = 5;
@@ -779,7 +796,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(13, 87);
+            this.label7.Location = new System.Drawing.Point(24, 131);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 26);
             this.label7.TabIndex = 4;
@@ -816,12 +833,44 @@
             this.panel4.Size = new System.Drawing.Size(584, 57);
             this.panel4.TabIndex = 0;
             // 
+            // teacherName
+            // 
+            this.teacherName.LabelText = "Teacher Name";
+            this.teacherName.Location = new System.Drawing.Point(714, 682);
+            this.teacherName.MinimumSize = new System.Drawing.Size(84, 53);
+            this.teacherName.Name = "teacherName";
+            this.teacherName.Size = new System.Drawing.Size(236, 80);
+            this.teacherName.TabIndex = 0;
+            this.teacherName.TextValue = "";
+            // 
+            // Label10
+            // 
+            this.Label10.AutoSize = true;
+            this.Label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.Label10.Location = new System.Drawing.Point(23, 88);
+            this.Label10.Name = "Label10";
+            this.Label10.Size = new System.Drawing.Size(205, 26);
+            this.Label10.TabIndex = 49;
+            this.Label10.Text = "TEACHER NAME : ";
+            // 
+            // teacherLabel
+            // 
+            this.teacherLabel.AutoSize = true;
+            this.teacherLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teacherLabel.Location = new System.Drawing.Point(225, 88);
+            this.teacherLabel.Name = "teacherLabel";
+            this.teacherLabel.Size = new System.Drawing.Size(129, 26);
+            this.teacherLabel.TabIndex = 38;
+            this.teacherLabel.Text = "Enter Name";
+            this.teacherLabel.Click += new System.EventHandler(this.teacherLabel_Click);
+            // 
             // AttendanceRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1310, 793);
+            this.Controls.Add(this.teacherName);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
@@ -910,6 +959,9 @@
         private System.Windows.Forms.Label period1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
+        private UserControl1 teacherName;
+        private System.Windows.Forms.Label Label10;
+        private System.Windows.Forms.Label teacherLabel;
     }
 }
 

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace Attendance_Register_App
 {
@@ -213,7 +214,7 @@ namespace Attendance_Register_App
         
         void DisplayInfo(Dictionary<String, Double> allPeriodAttendance, Dictionary<String, List<int[]>>totalAttendance)
         {
-            
+            teacherLabel.Text = teacherName.TextValue;
             nameDisplay.Text = name;
             idDisplay.Text = id;
             subject1.Text = subjects[0];
@@ -316,6 +317,7 @@ namespace Attendance_Register_App
         {   
             attendancePercentages = GetAttendancePercentage(out Dictionary<string, List<int[]>> totalAttendance);
             DisplayInfo(attendancePercentages, totalAttendance);
+            teacherName.Visible = false;
             panel2.Visible = false;
             panel3.Visible = false;
             panel1.Visible = true;
@@ -387,6 +389,7 @@ namespace Attendance_Register_App
         private void backButton_Click(object sender, EventArgs e)
         {
             ClearText();
+            teacherName.Visible = true;
             panel3.Visible = true;
             panel2.Visible = false;
             panel1.Visible = false;
@@ -573,6 +576,124 @@ namespace Attendance_Register_App
         private void subject1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void userControl11_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void period1Present_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                period1Present.Checked = !period1Present.Checked; 
+                e.Handled = true;
+            }
+        }
+
+        private void period1Absent_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                period1Absent.Checked = !period1Absent.Checked; 
+                e.Handled = true;
+            }
+        }
+
+        private void period2Present_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                period2Present.Checked = !period2Present.Checked;
+                e.Handled = true;
+            }
+        }
+
+        private void period2Absent_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                period2Absent.Checked = !period2Absent.Checked;
+                e.Handled = true;
+            }
+        }
+
+        private void period3Present_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                period3Present.Checked = !period3Present.Checked;
+                e.Handled = true;
+            }
+        }
+
+        private void period4Present_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                period4Present.Checked = !period4Present.Checked;
+                e.Handled = true;
+            }
+        }
+
+        private void period5Present_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                period5Present.Checked = !period5Present.Checked;
+                e.Handled = true;
+            }
+        }
+
+        private void period6Present_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                period6Present.Checked = !period6Present.Checked;
+                e.Handled = true;
+            }
+        }
+
+        private void period6Absent_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                period6Absent.Checked = !period6Absent.Checked;
+                e.Handled = true;
+            }
+        }
+
+        private void period5Absent_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                period5Absent.Checked = !period5Absent.Checked;
+                e.Handled = true;
+            }
+        }
+
+        private void period4Absent_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                period4Absent.Checked = !period4Absent.Checked;
+                e.Handled = true;
+            }
+        }
+
+        private void period3Absent_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                period3Absent.Checked = !period3Absent.Checked;
+                e.Handled = true;
+            }
+        }
+
+        private void teacherLabel_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
