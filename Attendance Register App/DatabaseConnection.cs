@@ -10,7 +10,19 @@ namespace Attendance_Register_App
     {
         public void connect()
         {
-            string connectionString = "Data Source=localhost;Initial Catalog=AttendanceDB;Integrated Security=True;"; // Adjust the connection string as needed
+            string connectionString = "Data Source=localhost;Initial Catalog=AdventureWorks2022;Integrated Security=True;"; 
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine("Error connecting to the database: " + ex.Message);
+                    return;
+                }
+            }
             Console.WriteLine("Database connection established.");
         }
     }

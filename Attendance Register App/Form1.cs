@@ -19,7 +19,7 @@ namespace Attendance_Register_App
         // This is a Windows Forms application for managing attendance registers.
         public string name { get; set; }
         public string id { get; set; }
-        public DateTime date { get; set; }
+        public DateTime date { get; set; } 
         public string CurrentDay { get; set; }
 
         public string[] Days = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" };
@@ -330,17 +330,14 @@ namespace Attendance_Register_App
                 MessageBox.Show("Please enter both Name and ID.");
                 return;
             }
-            else if (date == null)
+            if (string.IsNullOrEmpty(CurrentDay))
             {
                 MessageBox.Show("Please select a date.");
                 return;
             }
-            else if (!TwoOptionSet())
-            {
-                return;
-            }
-            else
-            {
+            
+           
+            
                 EnterAttendance();
                 MarkAttendance(date, periodAttendance);
                 MessageBox.Show("Attendance submitted successfully!");
@@ -348,7 +345,7 @@ namespace Attendance_Register_App
                 ResetAttendance();
                 dateTimePicker1.Enabled = true;
                 showDetailsButton.Enabled = true;
-            }
+            
            
 
         }
