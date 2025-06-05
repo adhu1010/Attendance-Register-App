@@ -17,6 +17,10 @@ namespace Attendance_Register_App
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AttendanceRegister());
+
+            // Create an instance of DatabaseConnection to call the connect method  
+            DatabaseConnection dbConnection = new DatabaseConnection();
+            dbConnection.connect(); // Ensure the database connection is closed when the application exits  
         }
     }
 }
